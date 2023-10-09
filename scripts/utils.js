@@ -4,7 +4,7 @@ const url_3 = "https://jsonplaceholder.typicode.com/todos";
 
 const nameInp = document.querySelector(".name");
 const emailInp = document.querySelector(".email");
-const input = document.querySelector("input");
+const inputs = document.querySelectorAll("input");
 const loginBtn = document.querySelector(".login");
 const body = document.querySelector("body");
 const pId = document.createElement("p");
@@ -22,7 +22,7 @@ export {
   url_3,
   nameInp,
   emailInp,
-  input,
+  inputs,
   loginBtn,
   body,
   pId,
@@ -32,5 +32,4 @@ export {
   pPhone,
   pWebsite,
   pMessage,
-  // cardInfo,
 };
