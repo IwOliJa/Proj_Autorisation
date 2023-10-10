@@ -106,6 +106,10 @@ function createSearchButton() {
   const searchBtn = document.createElement("button");
   searchBtn.textContent = "SEARCH";
   body.append(searchBtn);
+  searchBtn.addEventListener("click", () => {
+    document.location.href =
+      "http://127.0.0.1:5500/Proj_Autorisation/search.html";
+  });
 }
 
 function editWebsite(objUser) {
