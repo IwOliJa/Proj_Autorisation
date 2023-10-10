@@ -33,12 +33,18 @@ function inpValReading() {
     ? createUrl()
     : (pMessage.innerText = "please fill in all fields!");
 
-  nameInp.addEventListener("click", () => {
-    messageRemover();
+  inputs.forEach((input) => {
+    input.addEventListener("click", () => {
+      messageRemover();
+    });
   });
-  emailInp.addEventListener("click", () => {
-    messageRemover();
-  });
+
+  // nameInp.addEventListener("click", () => {
+  //   messageRemover();
+  // });
+  // emailInp.addEventListener("click", () => {
+  //   messageRemover();
+  // });
 }
 
 function createUrl() {
@@ -70,6 +76,7 @@ async function createCardData(jsonData) {
 }
 
 function createCard(objUser) {
+  loginBtn.style.display = "none";
   pId.innerText = `Id: ${objUser.id}`;
   pName.innerText = `Name: ${objUser.name}`;
   pUsername.innerText = `Username: ${objUser.username}`;
@@ -86,20 +93,20 @@ function createCard(objUser) {
     editWebsite(objUser);
   });
 
-  nameInp.addEventListener("click", () => {
-    cardInfo.style.display = "none";
-    // cardInfoRemover(cardInfo);
+  inputs.forEach((input) => {
+    input.addEventListener("click", () => {
+      cardInfo.style.display = "none";
+    });
   });
+  // nameInp.addEventListener("click", () => {
+  //   cardInfo.style.display = "none";
+  //   // cardInfoRemover(cardInfo);
+  // });
 
-  emailInp.addEventListener("click", () => {
-    cardInfo.style.display = "none";
-    // cardInfoRemover(cardInfo);
-  });
-
-  loginBtn.addEventListener("click", () => {
-    cardInfo.style.display = "none";
-    // cardInfoRemover(cardInfo);
-  });
+  // emailInp.addEventListener("click", () => {
+  //   cardInfo.style.display = "none";
+  //   // cardInfoRemover(cardInfo);
+  // });
 }
 
 function createSearchButton() {
