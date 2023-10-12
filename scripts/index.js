@@ -1,7 +1,5 @@
 import {
   url_1,
-  url_2,
-  url_3,
   nameInp,
   emailInp,
   inputs,
@@ -14,7 +12,7 @@ import {
   pPhone,
   pWebsite,
   pMessage,
-} from "./scripts/utils.js";
+} from "./utils.js";
 
 const editBtn = document.createElement("button");
 body.append(pMessage);
@@ -38,13 +36,6 @@ function inpValReading() {
       messageRemover();
     });
   });
-
-  // nameInp.addEventListener("click", () => {
-  //   messageRemover();
-  // });
-  // emailInp.addEventListener("click", () => {
-  //   messageRemover();
-  // });
 }
 
 function createUrl() {
@@ -98,15 +89,6 @@ function createCard(objUser) {
       cardInfo.style.display = "none";
     });
   });
-  // nameInp.addEventListener("click", () => {
-  //   cardInfo.style.display = "none";
-  //   // cardInfoRemover(cardInfo);
-  // });
-
-  // emailInp.addEventListener("click", () => {
-  //   cardInfo.style.display = "none";
-  //   // cardInfoRemover(cardInfo);
-  // });
 }
 
 function createSearchButton() {
@@ -115,7 +97,7 @@ function createSearchButton() {
   body.append(searchBtn);
   searchBtn.addEventListener("click", () => {
     document.location.href =
-      "http://127.0.0.1:5500/Proj_Autorisation/search.html";
+      "http://127.0.0.1:5500/Proj_Autorisation/buttons.html";
   });
 }
 
@@ -130,10 +112,23 @@ function editWebsite(objUser) {
   pMessage.style.color = "green";
   cardInfo.append(pMessage);
 
+  const regSymb = /^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$/i;
+
   editBtn.addEventListener("click", () => {
-    pWebsite.innerText = `Website: ${editInput.value}`;
-    saveWebsite(editInput);
+    if (editInput.value === "") {
+      pMessage.innerText = "please fill in all fields!";
+      pMessage.style.color = "red";
+    } else if (!validation(regSymb, editInput.value)) {
+      pMessage.innerText = "data is not correct, try again!";
+      pMessage.style.color = "red";
+    } else {
+      pWebsite.innerText = `Website: ${editInput.value}`;
+      saveWebsite(editInput);
+    }
   });
+}
+function validation(regSymb, editInput) {
+  return regSymb.test(editInput);
 }
 
 function saveWebsite(editInput) {
@@ -152,14 +147,3 @@ function clearInputs() {
   nameInp.value = "";
   emailInp.value = "";
 }
-
-// function cardInfoRemover(cardInfo) {
-//   cardInfo.style.display = "none";
-//   pId.innerText = "";
-//   pName.innerText = "";
-//   pUsername.innerText = "";
-//   pEmail.innerText = "";
-//   pPhone.innerText = "";
-//   pWebsite.innerText = "";
-//   location.reload(false);
-// }
