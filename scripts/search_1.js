@@ -3,15 +3,25 @@ searchInp.addEventListener("click", () => {
   createUrl();
 });
 
-const createUrl = function () {
+function createUrl() {
   const url = "https://jsonplaceholder.typicode.com/albums";
   console.log(url);
-  return fetchData(url);
-};
+  fetchData(url);
+}
 
 async function fetchData(url) {
   const response = await fetch(url);
   const jsonData = await response.json();
+  console.log(jsonData.length);
   console.log(jsonData);
-  return jsonData;
+  findUserTitle(jsonData);
+}
+
+function findUserTitle(jsonData) {
+  // for (let i = 0; i < jsonData.length; i++) {
+  //   console.log(jsonData[i].title);
+  // }
+  jsonData.forEach((element) => {
+    console.log(element.title);
+  });
 }

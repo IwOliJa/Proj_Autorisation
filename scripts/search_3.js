@@ -3,15 +3,22 @@ searchInp.addEventListener("click", () => {
   createUrl();
 });
 
-const createUrl = function () {
+function createUrl() {
   const url = "https://jsonplaceholder.typicode.com/posts";
   console.log(url);
-  return fetchData(url);
-};
+  fetchData(url);
+}
 
 async function fetchData(url) {
   const response = await fetch(url);
   const jsonData = await response.json();
+  console.log(jsonData.length);
   console.log(jsonData);
-  return jsonData;
+  findUserTitle(jsonData);
+}
+
+function findUserTitle(jsonData) {
+  jsonData.forEach((element) => {
+    console.log(element.title);
+  });
 }
