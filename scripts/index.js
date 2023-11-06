@@ -97,7 +97,7 @@ function createSearchButton() {
   body.append(searchBtn);
   searchBtn.addEventListener("click", () => {
     document.location.href =
-      "http://127.0.0.1:5500/Proj_Autorisation/buttons.html";
+      "http://127.0.0.1:5501/Proj_Autorisation/buttons.html";
   });
 }
 

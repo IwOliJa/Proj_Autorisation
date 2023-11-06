@@ -1,7 +1,18 @@
-.card {
+.card,
+.divData,
+.title_card {
   width: 260px;
   border: 1px solid rgb(147, 134, 134);
   border-radius: 0.3rem;
   margin: 1rem;
   padding: 1rem;
+}
+div .title_card {
+  width: 400px;
+}
+.hide {
+  display: none;
+}
+mark {
+  background-color: rgb(37, 223, 37);
 }

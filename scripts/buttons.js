@@ -4,17 +4,17 @@ const postsBtn = document.querySelector(".posts");
 
 albumsBtn.addEventListener("click", () => {
   document.location.assign(
-    "http://127.0.0.1:5500/Proj_Autorisation/search_1.html"
+    "http://127.0.0.1:5501/Proj_Autorisation/search_1.html"
   );
 });
 todosBtn.addEventListener("click", () => {
   document.location.assign(
-    "http://127.0.0.1:5500/Proj_Autorisation/search_2.html"
+    "http://127.0.0.1:5501/Proj_Autorisation/search_2.html"
   );
 });
 postsBtn.addEventListener("click", () => {
   document.location.assign(
-    "http://127.0.0.1:5500/Proj_Autorisation/search_3.html"
+    "http://127.0.0.1:5501/Proj_Autorisation/search_3.html"
   );
 });
 
